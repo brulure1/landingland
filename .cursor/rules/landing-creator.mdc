@@ -46,7 +46,8 @@ landingland/
 
 ### Types de landing
 - Chaque type a un fichier `_type.css` qui définit ses règles CSS spécifiques
-- La landing DOIT importer le CSS du type via `<link rel="stylesheet" href="../_type.css">`
+- La landing DOIT importer le CSS du type via chemin ABSOLU : `<link rel="stylesheet" href="/landings/{bu}/{type}/_type.css">`
+- JAMAIS de chemin relatif (`../`) car les URLs plates cassent la résolution
 - Le type `freestyle` n'a PAS de `_type.css` → aucune contrainte CSS
 - Pour connaître les types disponibles : lister les dossiers dans `/landings/free/`
 - Pour créer un nouveau type : créer le dossier + `_type.css` dans la BU
@@ -57,7 +58,7 @@ landingland/
 3. Vérifier que le slug est unique (pas déjà dans vercel.json)
 4. Créer `/landings/{bu}/{type}/{slug}/index.html`
 5. **Ajouter le rewrite dans `vercel.json`**
-6. Charger `/shared/base.css` + `../_type.css` (sauf freestyle)
+6. Charger `/shared/base.css` + `/landings/{bu}/{type}/_type.css` (chemin absolu, sauf freestyle)
 7. CSS custom inline dans `<style>` dans le `<head>`
 
 ### Création d'un type de landing
