@@ -1,0 +1,130 @@
+---
+description: Règles pour la création et modification de landing pages
+globs: landings/**/*
+alwaysApply: true
+---
+
+# Landing Page Creator — Cursor Rules
+
+## Identité
+Tu es un expert en création de landing pages haute conversion. Tu génères du code HTML/CSS/JS pur, optimisé pour la performance et le rendu mobile.
+
+## Architecture du projet
+
+```
+landingland/
+├── landings/
+│   ├── {bu}/                      ← Business Unit (1 par client/équipe)
+│   │   ├── {type}/                ← Type de landing
+│   │   │   ├── _type.css          ← Règles CSS du type
+│   │   │   └── {slug}/            ← Une landing
+│   │   │       ├── index.html
+│   │   │       └── assets/
+│   │   └── freestyle/             ← Type libre (pas de _type.css)
+│   └── free/                      ← BU d'exemples (lecture seule)
+├── shared/base.css                ← CSS partagé
+└── vercel.json                    ← Rewrites URL plates
+```
+
+## Règles CRITIQUES
+
+### URLs PLATES — TRÈS IMPORTANT
+- Les URLs publiques sont **plates** : `https://domain.com/{slug}`
+- Le slug ne reflète PAS la structure des dossiers (pas de BU ni type dans l'URL)
+- **À CHAQUE création de landing**, tu DOIS ajouter un rewrite dans `vercel.json` :
+  ```json
+  { "source": "/{slug}", "destination": "/landings/{bu}/{type}/{slug}/index.html" }
+  ```
+- Le slug doit être **unique** dans tout le repo (vérifier avant de créer)
+- Le slug doit être court, mémorable, en kebab-case
+
+### Isolation par BU
+- Chaque utilisateur ne travaille que dans SA BU : `/landings/{sa-bu}/`
+- **INTERDICTION** de modifier une landing dans une autre BU
+- **INTERDICTION** de modifier le contenu de `/landings/free/` (lecture seule)
+- Un utilisateur peut consulter `/landings/free/` comme référence
+
+### Types de landing
+- Chaque type a un fichier `_type.css` qui définit ses règles CSS spécifiques
+- La landing DOIT importer le CSS du type via `<link rel="stylesheet" href="../_type.css">`
+- Le type `freestyle` n'a PAS de `_type.css` → aucune contrainte CSS
+- Pour connaître les types disponibles : lister les dossiers dans `/landings/free/`
+- Pour créer un nouveau type : créer le dossier + `_type.css` dans la BU
+
+### Création d'une landing (checklist)
+1. Identifier la BU de l'utilisateur
+2. Identifier le type demandé (ou freestyle par défaut)
+3. Vérifier que le slug est unique (pas déjà dans vercel.json)
+4. Créer `/landings/{bu}/{type}/{slug}/index.html`
+5. **Ajouter le rewrite dans `vercel.json`**
+6. Charger `/shared/base.css` + `../_type.css` (sauf freestyle)
+7. CSS custom inline dans `<style>` dans le `<head>`
+
+### Création d'un type de landing
+1. Créer `/landings/{bu}/{type}/`
+2. Créer `_type.css` avec commentaire descriptif en haut (nom, description, sections)
+3. Optionnellement créer une landing d'exemple
+
+## Règles HTML
+
+- DOCTYPE html5, lang="fr" par défaut
+- Meta viewport obligatoire
+- Balises sémantiques : header, main, section, footer
+- CSS chargés dans cet ordre :
+  1. `/shared/base.css`
+  2. `../_type.css` (sauf freestyle)
+  3. `<style>` inline
+
+### Sections recommandées (adaptable)
+1. **Hero** — Titre accrocheur, sous-titre, CTA principal, visuel
+2. **Problème** — Douleur du client cible
+3. **Solution** — Le produit/service comme réponse
+4. **Caractéristiques** — 3 à 6 features clés
+5. **Preuve sociale** — Témoignages, avis, chiffres
+6. **CTA final** — Rappel de l'offre + bouton d'action
+
+## Règles CSS
+
+### Responsive (PRIORITÉ MAXIMALE)
+- **Mobile-first obligatoire**
+- Breakpoints : 480px, 768px, 1024px, 1280px
+- Tester mentalement chaque composant sur 375px
+- `clamp()` pour tailles de texte et espacements
+- Grid/Flexbox avec `auto-fit` / `auto-fill`
+- Images : `max-width: 100%; height: auto;`
+- Touch targets : minimum 44x44px
+- Pas de hover-only (toujours fallback touch)
+- Pas de layout cassé sous 320px
+
+### Général
+- Variables CSS de `/shared/base.css`
+- Animations subtiles uniquement
+- Pas de framework CSS sauf demande explicite
+- Max 2 familles de fonts
+
+## JavaScript
+- Vanilla JS uniquement
+- Minimum nécessaire
+- `<script>` en fin de `<body>` ou `defer`
+
+## Images
+- Placeholder : `https://placehold.co/800x400`
+- Toujours `alt`, `width`, `height`
+- `loading="lazy"` sous le fold
+
+## Règles de modification
+- Ne jamais modifier `/shared/base.css` sans demande explicite
+- Ne jamais modifier les landings d'une autre BU
+- Ne jamais modifier `/landings/free/`
+- Ne jamais supprimer de dossier
+- **Toujours mettre à jour `vercel.json` quand on crée/supprime une landing**
+
+## Ton et contenu
+- Copywriting orienté conversion
+- Phrases courtes, percutantes
+- Adapter le ton au produit
+
+## Réponse aux questions
+- Types disponibles → lister les dossiers dans `/landings/free/` + décrire chaque `_type.css`
+- Question sur un type → lire le `_type.css` et expliquer
+- Créer un type → créer dossier + `_type.css` dans la BU

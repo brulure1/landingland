@@ -1,0 +1,189 @@
+/*
+ * TYPE : saas
+ * DESCRIPTION : Landing page pour produit SaaS / application web.
+ *               Focus sur la démo, les features, et le pricing.
+ *
+ * SECTIONS ATTENDUES :
+ *   1. Hero (headline + sous-titre + CTA "Essai gratuit" + screenshot)
+ *   2. Logos partenaires / "Ils nous font confiance"
+ *   3. Features (grid alternée texte/image)
+ *   4. Pricing (2-3 plans en cards)
+ *   5. Témoignages
+ *   6. CTA final
+ *
+ * PALETTE : fond sombre ou gradient, accents vifs, UI moderne
+ */
+
+:root {
+  --saas-gradient-start: #0f172a;
+  --saas-gradient-end: #1e3a5f;
+  --saas-cta: #6366f1;
+  --saas-cta-hover: #4f46e5;
+  --saas-highlight: #22d3ee;
+}
+
+/* --- Hero SaaS --- */
+.hero-saas {
+  background: linear-gradient(135deg, var(--saas-gradient-start), var(--saas-gradient-end));
+  color: #fff;
+  padding: var(--space-3xl) 0 var(--space-4xl);
+  text-align: center;
+}
+
+.hero-saas h1 {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  color: #fff;
+}
+
+.hero-saas p {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.hero-saas__screenshot {
+  margin: var(--space-2xl) auto 0;
+  max-width: 900px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Logos partenaires --- */
+.logos-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2xl);
+  padding: var(--space-2xl) 0;
+  opacity: 0.5;
+}
+
+.logos-bar img {
+  height: 28px;
+  width: auto;
+  filter: grayscale(1);
+  transition: all var(--transition-base);
+}
+
+.logos-bar img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* --- Feature alternée --- */
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  padding: var(--space-3xl) 0;
+}
+
+@media (min-width: 768px) {
+  .feature-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .feature-row--reversed {
+    direction: rtl;
+  }
+
+  .feature-row--reversed > * {
+    direction: ltr;
+  }
+}
+
+.feature-row__visual {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-row__tag {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--saas-cta);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+/* --- Pricing --- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-xl);
+  padding: var(--space-2xl) 0;
+}
+
+.pricing-card {
+  padding: var(--space-2xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg);
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.pricing-card--featured {
+  border-color: var(--saas-cta);
+  box-shadow: 0 0 0 2px var(--saas-cta);
+  transform: scale(1.03);
+}
+
+.pricing-card__name {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.pricing-card__price {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.pricing-card__price span {
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.pricing-card__features {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.pricing-card__features li::before {
+  content: "✓ ";
+  color: var(--saas-cta);
+  font-weight: 700;
+}
+
+/* --- CTA SaaS --- */
+.btn--saas {
+  background: var(--saas-cta);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-xl);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  width: 100%;
+}
+
+.btn--saas:hover {
+  background: var(--saas-cta-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}

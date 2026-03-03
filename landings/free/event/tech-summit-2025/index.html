@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Summit Paris 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/base.css">
+  <link rel="stylesheet" href="../_type.css">
+  <style>
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); }
+    .section-title { font-size: var(--text-3xl); font-weight: 800; text-align: center; margin-bottom: var(--space-sm); color: var(--color-secondary); }
+    .section-subtitle { text-align: center; color: var(--color-text-light); margin-bottom: var(--space-2xl); font-size: var(--text-lg); }
+  </style>
+</head>
+<body>
+
+  <!-- HERO EVENT -->
+  <section class="hero-event">
+    <div class="container">
+      <span class="hero-event__date">📅 15-16 Novembre 2025 — Paris, La Défense</span>
+      <h1>Tech Summit <span style="color: var(--ev-gold);">Paris 2025</span></h1>
+      <p style="font-size: var(--text-lg); color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto var(--space-xl);">2 jours. 30+ speakers. L'événement tech incontournable de la rentrée.</p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown__item">
+          <span class="countdown__number" id="days">--</span>
+          <span class="countdown__label">Jours</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__number" id="hours">--</span>
+          <span class="countdown__label">Heures</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__number" id="minutes">--</span>
+          <span class="countdown__label">Min</span>
+        </div>
+        <div class="countdown__item">
+          <span class="countdown__number" id="seconds">--</span>
+          <span class="countdown__label">Sec</span>
+        </div>
+      </div>
+
+      <button class="btn--event">S'inscrire — Places limitées</button>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Les speakers</h2>
+      <p class="section-subtitle">Des experts reconnus qui partagent leur vision</p>
+      <div class="speakers-grid">
+        <div class="speaker">
+          <img class="speaker__photo" src="https://placehold.co/200x200/1a1a2e/f4a261?text=AL" alt="Alice Laurent" width="200" height="200" loading="lazy">
+          <p class="speaker__name">Alice Laurent</p>
+          <p class="speaker__role">CTO — ScaleUp</p>
+        </div>
+        <div class="speaker">
+          <img class="speaker__photo" src="https://placehold.co/200x200/1a1a2e/f4a261?text=MB" alt="Marc Bernard" width="200" height="200" loading="lazy">
+          <p class="speaker__name">Marc Bernard</p>
+          <p class="speaker__role">VP Engineering — TechCorp</p>
+        </div>
+        <div class="speaker">
+          <img class="speaker__photo" src="https://placehold.co/200x200/1a1a2e/f4a261?text=SD" alt="Sophie Dupont" width="200" height="200" loading="lazy">
+          <p class="speaker__name">Sophie Dupont</p>
+          <p class="speaker__role">AI Lead — DeepLab</p>
+        </div>
+        <div class="speaker">
+          <img class="speaker__photo" src="https://placehold.co/200x200/1a1a2e/f4a261?text=JM" alt="Jules Martin" width="200" height="200" loading="lazy">
+          <p class="speaker__name">Jules Martin</p>
+          <p class="speaker__role">Founder — DevTools.io</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <h2 class="section-title">Programme — Jour 1</h2>
+      <div class="agenda" style="margin-top: var(--space-xl);">
+        <div class="agenda__item">
+          <span class="agenda__time">09:00</span>
+          <div>
+            <strong>Ouverture & Keynote</strong>
+            <p style="color: var(--color-text-light);">L'avenir du développement avec l'IA — Alice Laurent</p>
+          </div>
+        </div>
+        <div class="agenda__item">
+          <span class="agenda__time">10:30</span>
+          <div>
+            <strong>Workshop : CI/CD moderne</strong>
+            <p style="color: var(--color-text-light);">Déploiement continu avec GitHub Actions et Vercel — Marc Bernard</p>
+          </div>
+        </div>
+        <div class="agenda__item">
+          <span class="agenda__time">14:00</span>
+          <div>
+            <strong>Table ronde : Scaling Engineering Teams</strong>
+            <p style="color: var(--color-text-light);">Passer de 5 à 50 développeurs sans perdre en vélocité</p>
+          </div>
+        </div>
+        <div class="agenda__item">
+          <span class="agenda__time">16:30</span>
+          <div>
+            <strong>Networking & Cocktail</strong>
+            <p style="color: var(--color-text-light);">Rencontrez les speakers et les participants</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOS PRATIQUES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Infos pratiques</h2>
+      <div class="info-cards" style="margin-top: var(--space-xl);">
+        <div class="info-card">
+          <div class="info-card__icon">📍</div>
+          <strong>Lieu</strong>
+          <p style="color: var(--color-text-light);">Centre de Conférences<br>La Défense, Paris</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">🕐</div>
+          <strong>Horaires</strong>
+          <p style="color: var(--color-text-light);">9h — 18h<br>2 jours complets</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">🎟️</div>
+          <strong>Tarif</strong>
+          <p style="color: var(--color-text-light);">Early bird : 149€<br>Plein tarif : 249€</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">🚇</div>
+          <strong>Accès</strong>
+          <p style="color: var(--color-text-light);">Métro L1 — La Défense<br>RER A — Grande Arche</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="background: var(--ev-gradient); color: #fff; padding: var(--space-4xl) 0; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: var(--text-3xl); font-weight: 800; color: #fff; margin-bottom: var(--space-md);">Réservez votre place</h2>
+      <p style="color: rgba(255,255,255,0.75); margin-bottom: var(--space-xl); font-size: var(--text-lg);">Places limitées à 300 participants. Ne manquez pas l'événement tech de l'année.</p>
+      <button class="btn--event">S'inscrire maintenant — 149€ early bird</button>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding: var(--space-xl) 0; color: var(--color-text-light); font-size: var(--text-sm); border-top: 1px solid var(--color-border);">
+    <p>&copy; 2025 Tech Summit Paris. Exemple de landing event.</p>
+  </footer>
+
+  <script>
+    const target = new Date('2025-11-15T09:00:00').getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').textContent = String(d).padStart(2, '0');
+      document.getElementById('hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

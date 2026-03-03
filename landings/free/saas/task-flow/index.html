@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Gérez vos projets sans effort</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/base.css">
+  <link rel="stylesheet" href="../_type.css">
+  <style>
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); }
+    .section-title { font-size: var(--text-3xl); font-weight: 800; text-align: center; margin-bottom: var(--space-sm); color: var(--color-secondary); }
+    .section-subtitle { text-align: center; color: var(--color-text-light); margin-bottom: var(--space-2xl); font-size: var(--text-lg); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero-saas">
+    <div class="container">
+      <h1>Vos projets. <span style="color: var(--saas-highlight);">Simplifiés.</span></h1>
+      <p>TaskFlow remplace vos 5 outils par un seul. Gestion de projet, communication, et suivi — tout en un.</p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <button class="btn--saas" style="width: auto; padding: var(--space-lg) var(--space-2xl); font-size: var(--text-lg);">Essai gratuit 14 jours</button>
+        <a href="#pricing" class="btn btn--secondary" style="border-color: rgba(255,255,255,0.3); color: #fff;">Voir les prix</a>
+      </div>
+      <img class="hero-saas__screenshot" src="https://placehold.co/900x500/1e293b/6366f1?text=Dashboard+TaskFlow" alt="Dashboard TaskFlow" width="900" height="500" loading="eager">
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="section">
+    <div class="container">
+      <p style="text-align: center; color: var(--color-text-light); margin-bottom: var(--space-lg); font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em;">Ils nous font confiance</p>
+      <div class="logos-bar">
+        <img src="https://placehold.co/120x30/e2e8f0/64748b?text=Startup+1" alt="Startup 1" width="120" height="30">
+        <img src="https://placehold.co/120x30/e2e8f0/64748b?text=Agency+Co" alt="Agency Co" width="120" height="30">
+        <img src="https://placehold.co/120x30/e2e8f0/64748b?text=TechCorp" alt="TechCorp" width="120" height="30">
+        <img src="https://placehold.co/120x30/e2e8f0/64748b?text=DesignLab" alt="DesignLab" width="120" height="30">
+        <img src="https://placehold.co/120x30/e2e8f0/64748b?text=ScaleUp" alt="ScaleUp" width="120" height="30">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">Tout ce qu'il faut, rien de superflu</h2>
+      <p class="section-subtitle">Des fonctionnalités pensées pour les équipes qui avancent vite</p>
+
+      <div class="feature-row">
+        <div>
+          <span class="feature-row__tag">Gestion de tâches</span>
+          <h3 style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-md);">Kanban, liste, timeline — vous choisissez</h3>
+          <p style="color: var(--color-text-light); line-height: 1.7;">Visualisez vos projets comme vous le souhaitez. Glissez-déposez, assignez, priorisez. Tout est fluide.</p>
+        </div>
+        <img class="feature-row__visual" src="https://placehold.co/500x350/f1f5f9/6366f1?text=Kanban+Board" alt="Kanban" width="500" height="350" loading="lazy">
+      </div>
+
+      <div class="feature-row feature-row--reversed">
+        <div>
+          <span class="feature-row__tag">Communication</span>
+          <h3 style="font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-md);">Discutez dans le contexte du projet</h3>
+          <p style="color: var(--color-text-light); line-height: 1.7;">Fini les messages perdus dans Slack. Chaque conversation est liée à une tâche, un projet, un objectif.</p>
+        </div>
+        <img class="feature-row__visual" src="https://placehold.co/500x350/f1f5f9/22d3ee?text=Chat+Intégré" alt="Chat intégré" width="500" height="350" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <h2 class="section-title">Tarifs simples, sans surprise</h2>
+      <p class="section-subtitle">Commencez gratuitement, upgradez quand vous êtes prêt</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <p class="pricing-card__name">Starter</p>
+          <p class="pricing-card__price">0€ <span>/mois</span></p>
+          <ul class="pricing-card__features">
+            <li>5 projets</li>
+            <li>3 membres</li>
+            <li>1 Go stockage</li>
+          </ul>
+          <button class="btn--saas">Commencer</button>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <p class="pricing-card__name">Pro</p>
+          <p class="pricing-card__price">12€ <span>/mois/user</span></p>
+          <ul class="pricing-card__features">
+            <li>Projets illimités</li>
+            <li>Membres illimités</li>
+            <li>50 Go stockage</li>
+            <li>Automatisations</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <button class="btn--saas">Essai gratuit</button>
+        </div>
+        <div class="pricing-card">
+          <p class="pricing-card__name">Enterprise</p>
+          <p class="pricing-card__price">Sur devis</p>
+          <ul class="pricing-card__features">
+            <li>Tout de Pro</li>
+            <li>SSO / SAML</li>
+            <li>SLA garanti</li>
+            <li>Manager dédié</li>
+          </ul>
+          <button class="btn--saas">Nous contacter</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="background: linear-gradient(135deg, var(--saas-gradient-start), var(--saas-gradient-end)); color: #fff; padding: var(--space-4xl) 0; text-align: center;">
+    <div class="container">
+      <h2 style="font-size: var(--text-3xl); font-weight: 800; color: #fff; margin-bottom: var(--space-md);">Prêt à simplifier votre workflow ?</h2>
+      <p style="color: rgba(255,255,255,0.75); margin-bottom: var(--space-xl); font-size: var(--text-lg);">14 jours gratuits. Aucune carte bancaire requise.</p>
+      <button class="btn--saas" style="width: auto; padding: var(--space-lg) var(--space-2xl); font-size: var(--text-lg); background: #fff; color: var(--saas-cta);">Démarrer maintenant</button>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding: var(--space-xl) 0; color: var(--color-text-light); font-size: var(--text-sm); border-top: 1px solid var(--color-border);">
+    <p>&copy; 2025 TaskFlow. Exemple de landing SaaS.</p>
+  </footer>
+</body>
+</html>

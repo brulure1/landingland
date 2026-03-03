@@ -1,0 +1,182 @@
+/*
+ * TYPE : event
+ * DESCRIPTION : Landing page pour événement, webinar, conférence, lancement.
+ *               Focus sur la date, le compte à rebours, et l'inscription.
+ *
+ * SECTIONS ATTENDUES :
+ *   1. Hero (titre événement, date, lieu, countdown, CTA "S'inscrire")
+ *   2. Programme / Agenda
+ *   3. Speakers / Intervenants
+ *   4. Infos pratiques (lieu, horaires, accès)
+ *   5. CTA inscription final
+ *
+ * PALETTE : contrastes forts, couleurs vives, sentiment d'urgence
+ */
+
+:root {
+  --ev-accent: #e63946;
+  --ev-accent-hover: #c1121f;
+  --ev-dark: #1a1a2e;
+  --ev-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --ev-gold: #f4a261;
+}
+
+/* --- Hero Event --- */
+.hero-event {
+  background: var(--ev-gradient);
+  color: #fff;
+  text-align: center;
+  padding: var(--space-4xl) 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-event h1 {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--space-md);
+}
+
+.hero-event__date {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* --- Countdown --- */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin: var(--space-2xl) 0;
+  flex-wrap: wrap;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.countdown__number {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+}
+
+.countdown__label {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- Programme / Agenda --- */
+.agenda {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.agenda__item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-left: 3px solid var(--ev-accent);
+  background: var(--color-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+@media (max-width: 480px) {
+  .agenda__item {
+    grid-template-columns: 1fr;
+  }
+}
+
+.agenda__time {
+  font-weight: 700;
+  color: var(--ev-accent);
+  white-space: nowrap;
+}
+
+/* --- Speakers --- */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-xl);
+}
+
+.speaker {
+  text-align: center;
+}
+
+.speaker__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-md);
+  border: 3px solid var(--ev-gold);
+}
+
+.speaker__name {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.speaker__role {
+  color: var(--color-text-light);
+  font-size: var(--text-sm);
+}
+
+/* --- CTA Event --- */
+.btn--event {
+  background: var(--ev-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.btn--event:hover {
+  background: var(--ev-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Infos pratiques --- */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.info-card {
+  padding: var(--space-xl);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.info-card__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}

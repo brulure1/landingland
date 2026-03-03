@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Léo Martin — Designer UI/UX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/base.css">
+  <!-- Freestyle : pas de _type.css -->
+  <style>
+    :root {
+      --portfolio-accent: #8b5cf6;
+      --portfolio-bg: #fafaf9;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--portfolio-bg);
+      color: var(--color-text);
+    }
+
+    .intro {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding: var(--space-4xl) 0;
+    }
+
+    .intro__content {
+      max-width: 700px;
+    }
+
+    .intro h1 {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: var(--space-lg);
+    }
+
+    .intro h1 span {
+      color: var(--portfolio-accent);
+    }
+
+    .intro p {
+      font-size: var(--text-lg);
+      color: var(--color-text-light);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+    }
+
+    .intro__links {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .intro__links a {
+      padding: var(--space-md) var(--space-xl);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      transition: all var(--transition-base);
+    }
+
+    .link--primary {
+      background: var(--portfolio-accent);
+      color: #fff;
+    }
+
+    .link--primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .link--ghost {
+      border: 2px solid var(--color-border);
+      color: var(--color-text);
+    }
+
+    .link--ghost:hover {
+      border-color: var(--portfolio-accent);
+      color: var(--portfolio-accent);
+    }
+
+    /* Projets */
+    .projects {
+      padding: var(--space-4xl) 0;
+    }
+
+    .projects h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-2xl);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .project-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--color-bg);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .project-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .project-card__info {
+      padding: var(--space-lg);
+    }
+
+    .project-card__info h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+
+    .project-card__info p {
+      color: var(--color-text-light);
+      font-size: var(--text-sm);
+    }
+
+    .project-card__tags {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .project-card__tags span {
+      padding: var(--space-xs) var(--space-sm);
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      color: var(--color-text-light);
+    }
+
+    /* Contact */
+    .contact {
+      padding: var(--space-4xl) 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .contact p {
+      color: var(--color-text-light);
+      margin-bottom: var(--space-xl);
+    }
+
+    .contact a {
+      font-size: var(--text-xl);
+      color: var(--portfolio-accent);
+      font-weight: 700;
+      border-bottom: 2px solid transparent;
+      transition: border-color var(--transition-base);
+    }
+
+    .contact a:hover {
+      border-color: var(--portfolio-accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: var(--space-xl) 0;
+      color: var(--color-text-light);
+      font-size: var(--text-sm);
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro__content">
+        <h1>Salut, moi c'est <span>Léo</span>.<br>Je crée des interfaces.</h1>
+        <p>Designer UI/UX freelance basé à Lyon. Je transforme des idées complexes en expériences simples et mémorables. 5 ans d'expérience, 40+ projets livrés.</p>
+        <div class="intro__links">
+          <a href="#contact" class="link--primary">Me contacter</a>
+          <a href="#projects" class="link--ghost">Voir mes projets</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projets récents</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://placehold.co/600x375/e2e8f0/8b5cf6?text=App+Banking" alt="App Banking" width="600" height="375" loading="lazy">
+          <div class="project-card__info">
+            <h3>NeoBank App</h3>
+            <p>Refonte complète de l'app mobile d'une néobanque. +40% d'engagement.</p>
+            <div class="project-card__tags">
+              <span>UI/UX</span>
+              <span>Mobile</span>
+              <span>Fintech</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/600x375/e2e8f0/8b5cf6?text=Dashboard+SaaS" alt="Dashboard SaaS" width="600" height="375" loading="lazy">
+          <div class="project-card__info">
+            <h3>DataViz Dashboard</h3>
+            <p>Dashboard analytics pour une plateforme SaaS B2B. Design system complet.</p>
+            <div class="project-card__tags">
+              <span>Dashboard</span>
+              <span>B2B</span>
+              <span>Design System</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/600x375/e2e8f0/8b5cf6?text=E-commerce" alt="E-commerce" width="600" height="375" loading="lazy">
+          <div class="project-card__info">
+            <h3>Maison Élégante</h3>
+            <p>E-commerce luxe pour une marque de décoration. Taux de conversion x2.</p>
+            <div class="project-card__tags">
+              <span>E-commerce</span>
+              <span>Luxe</span>
+              <span>Responsive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Un projet en tête ?</h2>
+      <p>Discutons-en autour d'un café (virtuel ou pas).</p>
+      <a href="mailto:leo@example.com">leo@example.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Léo Martin. Exemple de landing freestyle.</p>
+    </div>
+  </footer>
+</body>
+</html>
