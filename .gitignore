@@ -12,6 +12,7 @@ Desktop.ini
 node_modules/
 .env
 .env.local
+.envcursor
 
 # Next.js
 app/.next/
@@ -26,3 +27,4 @@ app/out/
 # Temp
 *.tmp
 *.bak
+.vercel
